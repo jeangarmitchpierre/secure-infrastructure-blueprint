@@ -16,7 +16,7 @@ This repository documents the logical architecture, physical and logical access 
 
 To implement an uncompromising zero-trust boundary across the operational environment, the local network is isolated into distinct **Virtual Local Area Networks (VLANs)**. All inter-VLAN communications are restricted via an explicit stateful Layer 3 Firewall Router, ensuring that untrusted public nodes can never interact with internal execution paths or terminal devices.
 
-### Logically Segmented Network Map
+
 ### Logically Segmented Network Map
 
 ```text
