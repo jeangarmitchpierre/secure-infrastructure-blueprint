@@ -17,23 +17,27 @@ This repository documents the logical architecture, physical and logical access 
 To implement an uncompromising zero-trust boundary across the operational environment, the local network is isolated into distinct **Virtual Local Area Networks (VLANs)**. All inter-VLAN communications are restricted via an explicit stateful Layer 3 Firewall Router, ensuring that untrusted public nodes can never interact with internal execution paths or terminal devices.
 
 ### Logically Segmented Network Map
-[ WAN / Core Internet Gateway ]
-                                │
-                       ┌────────┴────────┐
-                       │ Layer 3 Firewall│ <── Statefully Drops Inter-VLAN Traffic
-                       └────────┬────────┘
-                                │ (802.1Q Dot1Q VLAN Trunk Link)
-                       ┌────────┴────────┐
-                       │ Managed Switch  │ <── Layer 2 Port Security Active
-                       └─┬─────────────┬─┘
-                         │             │
-          ┌──────────────┴──┐       ┌──┴──────────────┐
-          │     VLAN 10     │       │     VLAN 20     │
-          │ Secure Ops Zone │       │ Peripheral Zone │
-          └───────┬─────────┘       └───────┬─────────┘
-                  │                         │
-       [Kiosk / Admin Terminal]     [Network Printer Subsystem]
-       [Static IP: 10.0.10.5]       [MAC-Reserved IP: 10.0.20.100]
+### Logically Segmented Network Map
+
+```text
+                     [ WAN / Core Internet Gateway ]
+                                    │
+                           ┌────────┴────────┐
+                           │ Layer 3 Firewall│ <── Statefully Drops Inter-VLAN Traffic
+                           └────────┬────────┘
+                                    │ (802.1Q Dot1Q VLAN Trunk Link)
+                           ┌────────┴────────┐
+                           │ Managed Switch  │ <── Layer 2 Port Security Active
+                           └─┬─────────────┬─┘
+                             │             │
+              ┌──────────────┴──┐       ┌──┴──────────────┐
+              │     VLAN 10     │       │     VLAN 20     │
+              │ Secure Ops Zone │       │ Peripheral Zone │
+              └───────┬─────────┘       └───────┬─────────┘
+                      │                         │
+           [Kiosk / Admin Terminal]     [Network Printer Subsystem]
+           [Static IP: 10.0.10.5]       [MAC-Reserved IP: 10.0.20.100]
+```
        ### Logical Network Configuration Matrix
 
 | VLAN ID | Subnet Range | Security Access Level | Connected Operational Assets |
