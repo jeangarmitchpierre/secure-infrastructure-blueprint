@@ -1,0 +1,4 @@
+Timestamp,Source_IP,Destination_IP,Port,Protocol,Action,Operational_Assessment
+11:42:01,10.0.10.14,10.0.10.1,22,SSH,ALLOW,Standard administrative verification loop from console terminal
+11:43:15,192.168.90.55,10.0.10.5,445,SMB,DROP,Anomaly: Isolated public guest node trying to access secure zone DB
+11:45:22,10.0.20.100,8.8.8.8,53,DNS,DROP,High Alert: Hardened printer node attempting outbound public recursive DNS
