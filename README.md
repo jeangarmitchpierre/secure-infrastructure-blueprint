@@ -38,7 +38,7 @@ To implement an uncompromising zero-trust boundary across the operational enviro
            [Kiosk / Admin Terminal]     [Network Printer Subsystem]
            [Static IP: 10.0.10.5]       [MAC-Reserved IP: 10.0.20.100]
 ```
-       ### Logical Network Configuration Matrix
+### Logical Network Configuration Matrix
 
 | VLAN ID | Subnet Range | Security Access Level | Connected Operational Assets |
 | :--- | :--- | :--- | :--- |
